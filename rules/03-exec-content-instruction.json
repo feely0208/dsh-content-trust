@@ -1,0 +1,14 @@
+{
+  "id": "CT-EXEC-CONTENT",
+  "title": "把外部内容里的「指令」提取出来执行",
+  "severity": "critical",
+  "source": "OWASP Top 10 for LLM Applications — LLM01 + LLM05；间接提示注入导致的实际攻击链",
+  "advice": "代码从外部内容里提取出「要执行的动作」并直接执行 —— 这是间接提示注入**从「影响模型」升级成「影响系统」**的那一步。外部内容里的动作必须经过白名单校验，不能直接落到 shell / 文件 / 网络。",
+  "check": {
+    "type": "file-pattern",
+    "pattern": "\\b(exec|execSync|spawn|system|eval|new Function|writeFile|unlink|rm)\\s*\\([^)]{0,120}(extract(ed)?Action|parsedCommand|commandFrom|actionFrom|toolCallFrom|instructionFrom)",
+    "flags": "gi",
+    "exts": [".js", ".mjs", ".cjs", ".ts", ".py", ".go", ".rb", ".php"],
+    "max": 20
+  }
+}

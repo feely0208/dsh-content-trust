@@ -1,0 +1,4 @@
+# @deepwhale-cn/dsh-content-trust 的组合层
+- insert:
+    - id: content-trust
+      name: '@deepwhale-cn/dsh-content-trust'
