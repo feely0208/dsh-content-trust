@@ -1,5 +1,7 @@
 # @deepwhale-cn/dsh-content-trust
 
+[![Listed on dsh-plugin.org](https://dsh-plugin.org/badges/listed.svg)](https://dsh-plugin.org/plugins/feely0208/dsh-content-trust)
+
 **外部内容信任边界** —— 查 agent 有没有把网页 / 文件 / 邮件里的内容当**指令**信。
 
 ## 不装它会怎样
