@@ -53,7 +53,7 @@ dsh-content-trust --list-rules
 dsh-content-trust --html r.html
 ```
 
-![dsh-content-trust 的检查报告示例](https://raw.githubusercontent.com/feely0208/dsh-content-trust/main/docs/report.png)
+![dsh-content-trust 的检查报告示例](https://www.deepwhale.org.cn/plugin-assets/dsh-content-trust/report.png)
 
 ## 边界（重要）
 
