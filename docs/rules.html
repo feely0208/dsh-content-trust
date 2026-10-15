@@ -1,0 +1,47 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<style>
+  * { box-sizing: border-box; }
+  body { margin:0; background:#0d0f13; display:flex; justify-content:center;
+         align-items:flex-start; padding:22px; font-family:-apple-system,"PingFang SC",
+         "Helvetica Neue",sans-serif; }
+  .win { width:1180px; border-radius:11px; overflow:hidden;
+          box-shadow:0 14px 44px rgba(0,0,0,.55); }
+  .bar { background:#2a2d34; padding:11px 15px; display:flex; align-items:center; gap:9px; }
+  .dot { width:12px; height:12px; border-radius:50%; }
+  .t { margin-left:11px; color:#7a8290; font-size:13px; letter-spacing:.02em; }
+  .term { background:#1b1d22; padding:20px 22px 24px; font-family:"SF Mono",Menlo,Consolas,
+           "PingFang SC",monospace; font-size:13.5px; line-height:1.72; }
+  .cmd { color:#5ee08a; margin-bottom:13px; font-size:13.5px; }
+  .cmd b { color:#fff; font-weight:600; }
+  .l { white-space:pre-wrap; word-break:break-word; }
+</style></head><body>
+  <div class="win">
+    <div class="bar">
+      <span class="dot" style="background:#ff5f57"></span>
+      <span class="dot" style="background:#febc2e"></span>
+      <span class="dot" style="background:#28c840"></span>
+      <span class="t">dsh-content-trust · rules</span>
+    </div>
+    <div class="term">
+      <div class="cmd">$ <b>dsh-content-trust --list-rules</b></div>
+      <div class="l"><span style="color:#7a8290">&nbsp;</span></div>
+<div class="l"><span style="color:#d8dee9">  深鲸守护 · 外部内容信任边界 —— 4 条规则</span></div>
+<div class="l"><span style="color:#7a8290">&nbsp;</span></div>
+<div class="l"><span style="color:#d8dee9">  [high] CT-RAW-TO-PROMPT</span></div>
+<div class="l"><span style="color:#d8dee9">        把外部内容直接拼进 prompt（无隔离）</span></div>
+<div class="l"><span style="color:#7a8290">        依据：OWASP Top 10 for LLM Applications — LLM01 Prompt Injection（含 Indirect Prompt Injection）；NIST AI 100-2 · 间接提示注入</span></div>
+<div class="l"><span style="color:#7a8290">&nbsp;</span></div>
+<div class="l"><span style="color:#d8dee9">  [medium] CT-NO-DELIMITER</span></div>
+<div class="l"><span style="color:#d8dee9">        拼接外部内容时没有分隔与来源标注</span></div>
+<div class="l"><span style="color:#7a8290">        依据：OWASP Top 10 for LLM Applications — LLM01；业界缓解措施建议：用明确分隔符包裹不可信内容并声明其性质</span></div>
+<div class="l"><span style="color:#7a8290">&nbsp;</span></div>
+<div class="l"><span style="color:#d8dee9">  [critical] CT-EXEC-CONTENT</span></div>
+<div class="l"><span style="color:#d8dee9">        把外部内容里的「指令」提取出来执行</span></div>
+<div class="l"><span style="color:#7a8290">        依据：OWASP Top 10 for LLM Applications — LLM01 + LLM05；间接提示注入导致的实际攻击链</span></div>
+<div class="l"><span style="color:#7a8290">&nbsp;</span></div>
+<div class="l"><span style="color:#d8dee9">  [high] CT-BROWSER-CRED</span></div>
+<div class="l"><span style="color:#d8dee9">        agent 浏览器上下文里注入了用户凭证</span></div>
+<div class="l"><span style="color:#7a8290">        依据：OWASP Top 10 for LLM Applications — LLM01 / LLM06（Excessive Agency）；间接提示注入 + 已登录会话 = 可代替用户操作</span></div>
+    </div>
+  </div>
+</body></html>

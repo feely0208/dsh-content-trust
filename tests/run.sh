@@ -1,5 +1,6 @@
 #!/bin/bash
 set -uo pipefail
+export PATH="/usr/local/bin:$PATH"
 cd "$(dirname "$0")/.."
 PASS=0; FAIL=0
 ok(){ echo "  ✅ $1"; PASS=$((PASS+1)); }

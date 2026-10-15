@@ -1,6 +1,6 @@
 {
   "name": "@deepwhale-cn/dsh-content-trust",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "查 agent 有没有把外部内容（网页/文件/邮件）当指令信 —— 间接提示注入的入口",
   "type": "module",
   "license": "MIT",
@@ -22,12 +22,13 @@
   ],
   "files": [
     "lib",
-    "skill",
     "bin",
     "rules",
-    "docs",
+    "skill",
     "cordis.patch.yml",
-    "README.md"
+    "tests/fixtures",
+    "README.md",
+    "LICENSE"
   ],
   "main": "./lib/index.js",
   "exports": {
